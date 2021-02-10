@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>NEW BOOK FORM</title>
+    <style type="text/css">
+        label {
+            display: inline-block;
+            width: 100px;
+            margin: 7px;
+            text-align: left;
+        }
+
+        button {
+            margin: 5px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <h1>NEW BOOK</h1>
+    <br>
+    <form action="#" th:action="@{/admin/save}" th:object="${book}" method="POST">
+
+        <input type="hidden" th:field="*{id}"/> <br/>
+
+        <label>Book Name:</label>
+        <input type="text" th:field="*{bookName}" placeholder="book name"><br>
+
+        <label>Serial Number:</label>
+        <input type="text" th:field="*{serialNumber}" placeholder="serial number"><br>
+
+        <label>Author Name:</label>
+        <input type="text" th:field="*{authorName}" placeholder="author name"><br>
+
+        <button type="submit">SAVE</button>
+    </form>
+    <a th:href="@{/admin/}">back to book list</a>
+</div>
+
+</body>
+</html>

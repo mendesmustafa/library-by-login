@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div>
+    <a th:href="@{/user/list}">GO TO USER LIST</a>
+    <h1>USER BASKET</h1>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>BOOK ID</th>
+            <th>BOOK NAME</th>
+            <th>SERIAL NUMBER</th>
+            <th>AUTHOR NAME</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="book : ${books}">
+            <td th:text="${book.id}"></td>
+            <td th:text="${book.bookName}"></td>
+            <td th:text="${book.serialNumber}"></td>
+            <td th:text="${book.authorName}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

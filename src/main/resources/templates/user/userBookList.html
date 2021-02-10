@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div>
+    <h1>BOOK LIST FOR USER</h1>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>BOOK ID</th>
+            <th>BOOK NAME</th>
+            <th>SERIAL NUMBER</th>
+            <th>AUTHOR NAME</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="book : ${books}">
+            <td th:text="${book.id}"></td>
+            <td th:text="${book.bookName}"></td>
+            <td th:text="${book.serialNumber}"></td>
+            <td th:text="${book.authorName}"></td>
+            <td>
+                <a th:href="@{/user/basket/{id} (id=${book.id})}">ADD TO BASKET</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
