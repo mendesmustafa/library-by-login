@@ -24,7 +24,7 @@
             <td th:text="${book.serialNumber}"></td>
             <td th:text="${book.authorName}"></td>
             <td>
-                <a th:href="@{/user/basket/{id} (id=${book.id})}">ADD TO BASKET</a>
+                <a th:href="@{/user/book/basket/{id} (id=${book.id})}">ADD TO BASKET</a>
             </td>
         </tr>
         </tbody>

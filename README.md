@@ -11,10 +11,12 @@
 #http://localhost:8080/admin/delete/{id}
 #http://localhost:8080/user/list
 #http://localhost:8080/user/basket/{id}
+#http://localhost:8080/user/addForm
+#http://localhost:8080/user/save
 
 #user info
 #username = user
 #password = 123
 #user processes
-#http://localhost:8080/user/list
-#http://localhost:8080/user/basket/{id}
+#http://localhost:8080/user/book/list
+#http://localhost:8080/user/book/basket/{id}
