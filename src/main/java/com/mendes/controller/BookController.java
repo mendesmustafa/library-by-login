@@ -6,8 +6,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 /**
  * Created by mendesmustafa on 09.02.2021.
  */
@@ -16,7 +14,7 @@ import java.util.List;
 @RequestMapping("/admin")
 public class BookController {
 
-    private BookService bookService;
+    private final BookService bookService;
 
     public BookController(BookService bookService) {
         this.bookService = bookService;
@@ -24,8 +22,7 @@ public class BookController {
 
     @GetMapping("/")
     public String list(Model model) {
-        List<Book> books = bookService.list();
-        model.addAttribute("books", books);
+        model.addAttribute("books", bookService.list());
         return "admin/bookList";
     }
 
@@ -43,15 +40,13 @@ public class BookController {
 
     @RequestMapping("/edit/{id}")
     public String edit(@PathVariable("id") Long id, Model model) {
-        Book book = bookService.getById(id);
-        model.addAttribute("book", book);
+        model.addAttribute("book", bookService.getById(id));
         return "admin/newBook";
     }
 
     @GetMapping("/addBookForm")
     public String add(Model model) {
-        Book book = new Book();
-        model.addAttribute("book", book);
+        model.addAttribute("book", new Book());
         return "admin/newBook";
     }
 }

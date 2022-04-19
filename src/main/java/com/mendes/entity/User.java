@@ -16,14 +16,19 @@ public class User implements Serializable {
     @SequenceGenerator(name = "USER_ID_SEQ", allocationSize = 1)
     @Column(name = "ID")
     private Long id;
+
     @Column(name = "USERNAME", unique = true)
     private String userName;
+
     @Column(name = "EMAIL")
     private String email;
+
     @Column(name = "PASSWORD")
     private String password;
+
     @Column(name = "NAME")
     private String name;
+
     @Column(name = "SURNAME")
     private String surname;
 

@@ -19,7 +19,7 @@ import java.util.List;
 @RequestMapping("/user/book")
 public class UserBookController {
 
-    private BookService bookService;
+    private final BookService bookService;
 
     public UserBookController(BookService bookService) {
         this.bookService = bookService;
@@ -27,8 +27,7 @@ public class UserBookController {
 
     @GetMapping("/list")
     public String list(Model model) {
-        List<Book> books = bookService.list();
-        model.addAttribute("books", books);
+        model.addAttribute("books", bookService.list());
         return "user/userBookList";
     }
 

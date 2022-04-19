@@ -14,7 +14,7 @@ import java.util.Optional;
 @Service
 public class BookService {
 
-    private BookRepository bookRepository;
+    private final BookRepository bookRepository;
 
     public BookService(BookRepository bookRepository) {
         this.bookRepository = bookRepository;
@@ -37,12 +37,12 @@ public class BookService {
                 book = bookOptional.get();
             }
         }
-        fill(book, model);
+        fillBook(book, model);
         bookRepository.save(book);
         return book;
     }
 
-    public void fill(Book book, Book model) {
+    public void fillBook(Book book, Book model) {
         book.setBookName(model.getBookName());
         book.setSerialNumber(model.getSerialNumber());
         book.setAuthorName(model.getAuthorName());
@@ -77,7 +77,6 @@ public class BookService {
     }
 
     public List<Book> list() {
-        List<Book> books = bookRepository.findAll();
-        return books;
+        return bookRepository.findAll();
     }
 }

@@ -16,10 +16,13 @@ public class Book implements Serializable {
     @SequenceGenerator(name = "BOOK_ID_SEQ", allocationSize = 1)
     @Column(name = "ID")
     private Long id;
+
     @Column(name = "BOOK_NAME")
     private String bookName;
+
     @Column(name = "SERIAL_NUMBER", unique = true)
     private String serialNumber;
+
     @Column(name = "AUTHOR_NAME")
     private String authorName;
 

@@ -13,7 +13,7 @@ import java.util.Optional;
 @Service
 public class UserService {
 
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
 
     public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
@@ -27,12 +27,12 @@ public class UserService {
                 user = userOptional.get();
             }
         }
-        fill(user, model);
+        fillUser(user, model);
         userRepository.save(user);
         return user;
     }
 
-    private void fill(User user, User model) {
+    private void fillUser(User user, User model) {
         user.setName(model.getName());
         user.setSurname(model.getSurname());
         user.setEmail(model.getEmail());

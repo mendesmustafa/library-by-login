@@ -1,6 +1,3 @@
-#login url = http://localhost:8080/login
-#logout url = http://localhost:8080/logout
-
 #admin user info
 #username = admin
 #password = 123
@@ -9,10 +6,10 @@
 #http://localhost:8080/admin/addBookForm
 #http://localhost:8080/admin/edit/{id}
 #http://localhost:8080/admin/delete/{id}
-#http://localhost:8080/user/list
 #http://localhost:8080/user/basket/{id}
 #http://localhost:8080/user/addForm
 #http://localhost:8080/user/save
+#logout url = http://localhost:8080/logout
 
 #user info
 #username = user
@@ -20,3 +17,4 @@
 #user processes
 #http://localhost:8080/user/book/list
 #http://localhost:8080/user/book/basket/{id}
+#logout url = http://localhost:8080/logout
